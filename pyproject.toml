@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "bionet-sdk"
+version = "0.1.0"
+description = "SIWE based authentication service for the Bionet"
+authors = ["Dave Bryson <davebryson@users.noreply.github.com>"]
+readme = "README.md"
+packages = [{ include = "bionet" }]
+
+[tool.poetry.scripts]
+bionet = "bionet.cli:cli"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+siwe = "^2.4.0"
+httpx = "^0.25.0"
+fastapi = "^0.103.1"
+uvicorn = { extras = ["standard"], version = "^0.23.2" }
+click = "^8.1.7"
+web3 = "^6.11.3"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.2"
+black = "^23.9.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
